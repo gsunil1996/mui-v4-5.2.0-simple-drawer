@@ -18,7 +18,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { useHistory } from "react-router-dom";
-import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -366,9 +365,6 @@ const ExternalDrawer = () => {
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
-            <MenuItem>
-                <Button variant="contained" color="secondary" size='large' onClick={() => handleLogout()} >Logout</Button>
-            </MenuItem>
         </Menu>
     );
 
@@ -464,11 +460,6 @@ const ExternalDrawer = () => {
         setOpen(false);
     };
 
-    const handleLogout = () => {
-        localStorage.clear();
-        history.push('/login');
-    }
-
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -522,9 +513,6 @@ const ExternalDrawer = () => {
                         >
                             <AccountCircle />
                         </IconButton>
-                        <div>
-                            <Button variant="contained" color="secondary" style={{ marginLeft: "10px" }} onClick={() => handleLogout()} >Logout</Button>
-                        </div>
                     </Box>
 
                     {/* this is for mobile view */}
